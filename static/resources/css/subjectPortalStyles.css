@@ -1,0 +1,240 @@
+.buttonMenu{
+    background-color: #464850;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    color: lightgrey;
+    text-align: left;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family: Arial;
+    width: 200px;
+    height: 50px;
+}
+
+.buttonMenu:hover{
+    background-color:grey;
+    color: #FDFCFC;
+}
+
+.buttonMenuWithUndercategory1{
+    background-color: white;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+
+.buttonMenuWithUndercategory2{
+    background-color: white;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+.buttonMenuWithUndercategory3{
+    background-color: white;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+.buttonMenuWithUndercategory4{
+    background-color: white;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+.buttonMenuWithUndercategory5{
+    background-color:white;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+.buttonMenuWithUndercategory6{
+    background-color: white;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+.buttonMenuWithUndercategory7{
+    background-color:green;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+.buttonMenuWithUndercategory8{
+    background-color:green;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+    border-radius:5%;
+}
+
+.buttonMenuWithUndercategory1:hover{
+    background-color:black;
+    color:	white;
+}
+.buttonMenuWithUndercategory2:hover{
+    background-color: black;
+    color:	white;
+}
+.buttonMenuWithUndercategory3:hover{
+    background-color: black;
+    color:	white;
+}
+.buttonMenuWithUndercategory4:hover{
+    background-color: black;
+    color:	white;
+}
+.buttonMenuWithUndercategory5:hover{
+    background-color: black;
+    color:	white;
+}
+.buttonMenuWithUndercategory6:hover{
+    background-color: black;
+    color:	white;
+}
+.buttonMenuWithUndercategory7:hover{
+    background-color: black;
+    color:	white;
+}
+.buttonMenuWithUndercategory8:hover{
+    background-color: black;
+    color:	white;
+}
+
+.buttonSecondMenu {
+    background-color: #464850;
+    border: none;
+    border-bottom: 1px dashed lightgrey;
+    color: lightgrey;
+    text-align: right;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 30px;
+}
+
+.buttonSecondMenu:hover {
+    background-color: grey;
+    color: #FDFCFC;
+}
+
+.buttonLastSecondMenu {
+    background-color: #464850;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    color: lightgrey;
+    text-align: right;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 30px;
+}
+
+.buttonLastSecondMenu:hover {
+    background-color: grey;
+    color: #FDFCFC;
+}
+.buttonActivMenu {
+    background-color: #797c88;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    color: lightgrey;
+    text-align: left;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    width: 200px;
+    height: 50px;
+}
+
+.emergency_button{
+    position:absolute;
+    background-color: #FF0000;
+    border: none;
+    color: lightgrey;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.2s;
+    font-family:Arial;
+    left:5px;
+    top:750px;
+    width: 190px;
+    height: 150px;
+    border-radius:25%;
+}
+
+.emergency_button:hover{
+    background-color: white;
+    color:red;
+}
+
+

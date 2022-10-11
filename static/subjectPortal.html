@@ -1,10 +1,324 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>SubjectPortal</title>
+
+
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href = "C:\Users\mathe\IdeaProjects\ADP3CAPSTONE2022-GROUP9-CLIENT\static\resources\css\subjectPortalStyles.css" type ="text/css" rel= "stylesheet" media ="screen"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="C:\Users\mathe\IdeaProjects\ADP3CAPSTONE2022-GROUP9-CLIENT\static\resources\css\user-form.css"
+          th:href="@{/css/user-form.css}">
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script defer src="save.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#userList').DataTable();
+        } );
+    </script>
 </head>
+
+<style>
+
+    .sidenav{
+        height: 100% ;
+        width: 280px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color:#404040;
+        overflow-x: hidden;
+        padding-top:20px;
+
+
+    }
+
+    .sidenav default{
+        padding:6px 8px 6px 16px;
+        font-size:25px;
+        color:#818181;
+        display:block;
+        border-radius: 50%;
+    }
+
+    .sidenav deafult:hover {color:#FDFCFC;}
+
+    .main {
+        margin-left:200px;
+        font-size:20px;
+        padding:0px 0px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top:15px;
+        }
+        .sidenav default {
+            font-size: 18px;
+        }
+
+</style>
 <body>
 
+<div class ="sidenav">
+    <a href ="subjectPortal.html">
+        <img src ="C:\Users\mathe\IdeaProjects\ADP3CAPSTONE2022-GROUP9-CLIENT\static\resources\img\LOGO.png" width =250px height =170px>
+        <hr height =3px; color ="white" />
+    </a>
+    <br/>
+
+    <a href="universityPortal.html">
+        <button onclick ="" class ="buttonMenuWithUndercategory1"><h3>University</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="facultyPortal.html">
+        <button onclick="" class="buttonMenuWithUndercategory2"><h3>Faculty</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <button onclick="" class="buttonMenuWithUndercategory3"><h3>Department</h3></a></button>
+    <br/>
+    <br/>
+
+    <a href="subjectPortal.html">
+        <button onclick="" class="buttonMenuWithUndercategory4"><h3>Subject</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="Lecturer - Home.html">
+        <button onclick="" class="buttonMenuWithUndercategory5"><h3>Lecturer</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="Exam.html">
+        <button onclick="" class="buttonMenuWithUndercategory6"><h3>Exam</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="Student.html">
+        <button onclick="" class="buttonMenuWithUndercategory6"><h3>Student</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <button onclick="" class="buttonMenuWithUndercategory6"><h3>Course</h3></a></button>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+
+
+
+
+
+</div>
+<div class="container">
+    <div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
+        <ul class="nav nav-tabs justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Subject List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="userList" class="table table-bordered table-hover table-striped">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Code</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Credits</th>
+                                    <th scope="col">LecID</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">ADP72S</th>
+                                    <td>APP DEVELOPMENT</td>
+                                    <td>36</td>
+                                    <td>KB12</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ITS3X5</th>
+                                    <td>INFORMATION SYSTEMS</td>
+                                    <td>36</td>
+                                    <td>FA1</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PP36C</th>
+                                    <td>PROFESIONAL PRACTICE</td>
+                                    <td>30</td>
+                                    <td>BR23</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ICE34E</th>
+                                    <td>ELECTIVES</td>
+                                    <td>28</td>
+                                    <td>AR45</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ADT57U</th>
+                                    <td>APP THEORY</td>
+                                    <td>36</td>
+                                    <td>GK90</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ADF35T</th>
+                                    <td>APP FUNDAMENTALS</td>
+                                    <td>36</td>
+                                    <td>MG32</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">BPQ34</th>
+                                    <td>BUSINESS STUDIES</td>
+                                    <td>25</td>
+                                    <td>FU21</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">ES4T</th>
+                                    <td>ECONOMIC STUDIES</td>
+                                    <td>30</td>
+                                    <td>GK12</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">AP23D</th>
+                                    <td>ARCHITECTURE PRACTICE</td>
+                                    <td>30</td>
+                                    <td>EY32</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">PT45S</th>
+                                    <td>PHYSIO THEORY</td>
+                                    <td>15</td>
+                                    <td>TQ23</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SS4R</th>
+                                    <td>SPORTS SCIENCE</td>
+                                    <td>20</td>
+                                    <td>NP20</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Add a subject</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Subject Code</label>
+                            <div class="col-lg-9">
+                                <input id="subCode" class="form-control" type="text" value="" required></input>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Subject Name</label>
+                            <div class="col-lg-9">
+                                <input id="subName" class="form-control" type="text" value=""required></input>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Subject Credits</label>
+                            <div class="col-lg-9">
+                                <input id="subCredits" class="form-control" type="email" value=""required></input>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Lecturer ID#</label>
+                            <div class="col-lg-9">
+                                <input id="lecId" class="form-control" type="text" value=""required></input>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12 text-center">
+                                <input type="reset" class="btn btn-secondary" value="Cancel">
+                                <button id="1" class="btn btn-primary">Create</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
