@@ -1,10 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>University Portal</title>
+
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href = "static/resources/css/subjectPortalStyles.css" type ="text/css" rel= "stylesheet" media ="screen"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="static/resources/css/user-form.css"
+          th:href="@{/css/user-form.css}">
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script defer src="save.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
+    <script type="text/javascript">
+
+        $(document).ready(function() {
+            $('#userList').DataTable();
+        } );
+    </script>
+
 </head>
+
+<style>
+
+    .sidenav{
+        height: 100% ;
+        width: 250px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color:#404040;
+        overflow-x: hidden;
+        padding-top:20px;
+    }
+
+    .sidenav default{
+        padding:6px 8px 6px 16px;
+        font-size:25px;
+        color:#818181;
+        display:block;
+        border-radius: 50%;
+    }
+
+    .sidenav deafult:hover {color:#FDFCFC;}
+
+    .main {
+        margin-left:200px;
+        font-size:20px;
+        padding:0px 0px;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top:15px;
+        }
+        .sidenav default {
+            font-size: 18px;
+        }
+    }
+
+</style>
 <body>
+
+<div class ="sidenav">
+
+    <a href ="subjectPortal.html">
+        <img src ="static/resources/img/LOGO.png" width =230px height =200px>
+        <hr height =3px; color ="white" />
+    </a>
+    <br/>
+
+    <a href ="coursePortal.html">
+    <button onclick="" class="buttonMenuWithUndercategory6">
+        <h3>Course</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href ="departmentPortal.html">
+    <button onclick="" class="buttonMenuWithUndercategory3">
+        <h3>Department</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="enrollmentPortal.html">
+        <button onclick="" class="buttonMenuWithUndercategory4">
+            <h3>Enrollment</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="facultyPortal.html">
+        <button onclick="" class="buttonMenuWithUndercategory2">
+            <h3>Faculty</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="lecturerPortal.html">
+        <button onclick="" class="buttonMenuWithUndercategory5">
+            <h3>Lecturer</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="studentPortal.html">
+    <button onclick="" class="buttonMenuWithUndercategory6">
+        <h3>Student</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="subjectPortal.html">
+    <button onclick="" class="buttonMenuWithUndercategory4">
+        <h3>Subject</h3></button>
+</a>
+    <br/>
+    <br/>
+
+    <a href="systemAdmin.html">
+        <button onclick="" class="buttonMenuWithUndercategory6">
+            <h3>SystemAdmin</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="testPortal.html">
+        <button onclick="" class="buttonMenuWithUndercategory6">
+            <h3>Test</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <a href="tutorPortal.html">
+        <button onclick="" class="buttonMenuWithUndercategory4">
+            <h3>Tutor</h3></button>
+    </a>
+    <br/>
+    <br/>
+
+    <!--
+       <a href="universityPortal.html">
+           <button onclick ="" class ="buttonMenuWithUndercategory1"><h3>University</h3></button>
+       </a>
+       <br/>
+       <br/>
+   -->
+</div>
+
+<div class="container">
+    <div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
+        <ul class="nav nav-tabs justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab" aria-controls="list" aria-selected="false">List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form" aria-selected="true">Form</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>University List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="userList" class="table table-bordered table-hover table-striped">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">INSERT ID</th>
+                                    <td>INSERT NAME</td>
+                                    <td>INSERT EMAIL</td>
+                                    <td>
+                                        <a href="#"><i class="fas fa-edit"></i></a> | <a href="#"><i class="fas fa-user-times"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Add a university</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">University Name</label>
+                            <div class="col-lg-9">
+                                <input id="uniName" class="form-control" type="text" value=""required></input>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">University Email</label>
+                            <div class="col-lg-9">
+                                <input id="uniEmail" class="form-control" type="email" value=""required></input>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-lg-12 text-center">
+                                <input type="reset" class="btn btn-secondary" value="Cancel">
+                                <button id="1" class="btn btn-primary">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
