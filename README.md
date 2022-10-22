@@ -11,6 +11,6 @@ Online Education
 
 ## Built with:
 
-- [HTML 5](https://html.com/html5/) - Markup Language
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling
-- [Javascript](https://www.javascript.com/) - Programming Language
+- [HTML 5](https://www.java.com/en/) - Object Orientated Programming Language
+- [Springboot](https://spring.io/projects/spring-boot) - Application Framework
+
